@@ -1,0 +1,117 @@
+:root{
+  --bg:#090a0f;
+  --text:#fff;
+  --accent:#00d4ff;
+  --accent2:#ff006e;
+  --glass:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:Inter,system-ui,sans-serif;background:radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);color:var(--text)}
+canvas{display:block}
+
+#gameCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
+
+.ui-layer{
+  position:fixed;
+  inset:0;
+  z-index:10;
+  pointer-events:none;
+}
+
+.glass-panel,.modal-content,.hud-box,.minimap,.btn{
+  backdrop-filter:blur(12px);
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+
+.minimap-container{
+  position:fixed;
+  top:18px;
+  right:18px;
+  pointer-events:auto;
+  text-align:center;
+}
+
+.minimap{
+  width:180px;
+  height:180px;
+  overflow:hidden;
+  border:2px solid var(--accent);
+  box-shadow:0 0 30px rgba(0,212,255,.35);
+  cursor:pointer;
+}
+
+#minimapCanvas,#fullMapCanvas{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.minimap-instructions{
+  margin-top:8px;
+  font-size:12px;
+  color:#a9b3c2;
+}
+
+.hud-box{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  pointer-events:none;
+  padding:14px 16px;
+  min-width:240px;
+  color:#fff;
+  font-size:14px;
+  line-height:1.7;
+  box-shadow:0 0 24px rgba(0,0,0,.35);
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.86);
+  z-index:100;
+  pointer-events:auto;
+}
+
+.modal.active{display:flex}
+
+.modal-content{
+  width:min(92vw,1000px);
+  max-height:90vh;
+  overflow:auto;
+  padding:24px;
+  position:relative;
+}
+
+.modal-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:42px;
+  cursor:pointer;
+  line-height:1;
+}
+
+.btn{
+  margin-top:16px;
+  padding:12px 18px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+}

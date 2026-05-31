@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Portfolio Quest - Exploration</title>
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="stylesheet" href="/src/css/game.css" />
+</head>
+<body>
+  
+  <canvas id="gameCanvas"></canvas>
+
+  <div class="ui-layer">
+    <div class="minimap-container">
+      <div class="minimap" id="minimap">
+        <canvas id="minimapCanvas"></canvas>
+      </div>
+      <div class="minimap-instructions">M - Toggle Full Map</div>
+    </div>
+  </div>
+
+  <div id="fullMapModal" class="modal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close" id="closeMap">&times;</button>
+      <h2 style="color:white;text-align:center;margin-bottom:1rem;">🌍 Full Space Map</h2>
+      <canvas id="fullMapCanvas"></canvas>
+    </div>
+  </div>
+
+  <div id="planetModal" class="modal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close" id="closePlanet">&times;</button>
+      <h2 id="planetName">Planet</h2>
+      <p id="planetCategory" class="planet-category"></p>
+      <div id="planetContent" class="planet-content"></div>
+      <div class="planet-actions">
+        <button class="btn btn-primary" id="visitMore">Continue Exploration</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/game-main.js"></script>
+
+</body>
+</html>
