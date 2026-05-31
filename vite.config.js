@@ -1,13 +1,19 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // Crucial for GitHub Pages: Ensures assets are linked relatively rather than from absolute root
+  // Ensures all asset paths are built relative to your GitHub Pages subfolder
   base: './', 
   
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    // Cleaned up manualChunks since we are running a streamlined 2D HTML5 Canvas engine now
+    rollupOptions: {
+      // CRUCIAL: Tells Vite to compile BOTH pages and their respective assets
+      input: {
+        main: 'index.html',
+        game: 'game.html'
+      }
+    }
   },
   
   server: {
